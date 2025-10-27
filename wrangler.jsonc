@@ -1,0 +1,27 @@
+/**
+ * For more details on how to configure Wrangler, refer to:
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "daylog",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-03",
+    "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "diary",
+          "database_id": "2c94c022-0fed-4936-a7c4-e2d2afa80495"
+        }
+    ],
+    "secrets_store_secrets": [
+        {
+            "store_id": "22ed6678d2a74059a1679fbb7f0a8eeb",
+            "binding": "SECRET",
+            "secret_name": "TEMP"
+        }
+    ],
+	"observability": {
+		"enabled": true
+	}
+}
